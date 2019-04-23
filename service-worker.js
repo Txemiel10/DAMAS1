@@ -23,8 +23,7 @@ this.addEventListener('install', event => {
   event.waitUntil(
     caches.open(currentCache.offline).then(function(cache) {
       return cache.addAll([
-          offlineUrl,
-	  'juego.js'
+          offlineUrl
       ]);
     })
   );
@@ -35,8 +34,8 @@ this.addEventListener('fetch', event => {
   // so include a check for Accept: text/html header.
   if (event.request.mode === 'navigate' || (event.request.method === 'GET' && event.request.headers.get('accept').includes('text/html'))) {
         event.respondWith(
-          fetch(event.request.url)
-    	);
+          fetch(event.request.url);
+    );
   }
   else{
         // Respond with everything else if we can
