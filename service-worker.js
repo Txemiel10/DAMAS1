@@ -4,7 +4,7 @@ var cacheVersion = 1;
 var currentCache = {
   offline: 'offline-cache' + cacheVersion
 };
-const offlineUrl = 'juego_offline.html';
+const offlineUrl = 'index.html';
 
 function createCacheBustedRequest(url){
 	let request = new Request(url, {cache: 'reload'});
